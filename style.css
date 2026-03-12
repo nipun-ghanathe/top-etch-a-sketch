@@ -30,9 +30,5 @@ button:hover {
   flex-basis: 6rem;
   aspect-ratio: 1 / 1;
   margin: 0.125rem;
-  background-color: #00000000;
-}
-
-.cell:hover {
-  background-color: #000000aa;
+  background-color: rgba(0, 0, 0, 0);
 }
