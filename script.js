@@ -9,10 +9,10 @@ function drawGrid(gridDiv, gridSize = 16) {
       cellDiv.addEventListener('mouseenter', () => {
         const bgc =
           getComputedStyle(cellDiv).getPropertyValue('background-color');
-        const colorParts = bgc.match(/[\d.]+/g).map(Number);
-        let [r, g, b, a = 1] = colorParts;
-        if (a !== 1)
-          cellDiv.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a + 0.1})`;
+        const colorParts = bgc.match(/[\d.]+/g);
+        const alpha = Number(colorParts[3]);
+        if (alpha !== 1)
+          cellDiv.style.backgroundColor = `rgba(0, 0, 0, ${alpha + 0.1})`;
       });
       rowDiv.appendChild(cellDiv);
     }
